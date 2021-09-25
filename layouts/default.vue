@@ -5,7 +5,8 @@
     <div class="content">
         <Nuxt />
     </div>
-    <LoginModal ref="loginModal" />
+    <LoginModal ref="loginModal" @open-registration="openRegistration" />
+    <RegistrationModal ref="registrationModal" @open-login="openLogin" />
   </div>
 </template>
 
@@ -13,12 +14,16 @@
 import Sidebar from '~/components/app/Sidebar'
 import Header from '~/components/app/Header'
 import LoginModal from '~/components/modals/LoginModal'
+import RegistrationModal from '~/components/modals/RegistrationModal'
 
 export default {
-  components: { Sidebar, Header, LoginModal },
+  components: { Sidebar, Header, LoginModal, RegistrationModal },
   methods: {
       openLogin(){
           this.$refs.loginModal.open()
+      },
+      openRegistration() {
+          this.$refs.registrationModal.open()
       }
   }
 }

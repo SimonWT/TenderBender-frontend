@@ -11,7 +11,7 @@ export const mutations = {
 }
 
 export const actions = {
-  initAuth({}, payload) {},
+  initAuth({}, payload) {}
 }
 
 export const getters = {

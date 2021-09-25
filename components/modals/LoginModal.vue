@@ -1,29 +1,32 @@
 <template>
   <div class="center">
-    <vs-dialog v-model="active" blur :loading="isLoading" >
+    <vs-dialog v-model="active" blur :loading="isLoading">
       <template #header>
-        <h4 class="not-margin">Welcome to <b>TenderBender</b></h4>
+        <h4 class="not-margin">Добро пожаловать в <b>TenderBender</b></h4>
       </template>
 
       <div class="con-form">
         <vs-input v-model="email" placeholder="Email">
           <template #icon> @ </template>
         </vs-input>
-        <vs-input type="password" v-model="password" placeholder="Password">
+        <vs-input type="password" v-model="password" placeholder="Пароль">
           <template #icon>
             <i class="bx bxs-lock"></i>
           </template>
         </vs-input>
         <div class="flex">
-          <vs-checkbox v-model="remember">Remember me</vs-checkbox>
-          <a href="#">Forgot Password?</a>
+          <vs-checkbox v-model="remember">Запомнить меня</vs-checkbox>
+          <a href="#">Забыли пароль?</a>
         </div>
       </div>
 
       <template #footer>
         <div class="footer-dialog">
-          <vs-button block> Sign In </vs-button>
-          <div class="new">New Here? <a href="#">Create New Account</a></div>
+          <vs-button block @click="auth"> Войти </vs-button>
+          <div class="new">
+            Не зарегестрированы?
+            <a href="#login" @click="openRegistration">Создать аккаунт?</a>
+          </div>
         </div>
       </template>
     </vs-dialog>
@@ -31,17 +34,31 @@
 </template>
 
 <script>
+import { login } from '~/api/auth'
+
 export default {
   data: () => ({
     active: false,
     email: '',
     password: '',
     remember: false,
-    isLoading: false
+    isLoading: false,
   }),
   methods: {
     open() {
       this.active = true
+    },
+    openRegistration() {
+      this.active = false
+      this.$emit('open-registration')
+    },
+    async auth() {
+      if(this.email.length > 0 && this.password.length > 0) {
+        this.isLoading = true
+        const { data } = await login(this.email, this.password)
+        this.isLoading = false
+        this.$store.commit('auth/SET_USER', data)
+      }
     },
   },
 }
