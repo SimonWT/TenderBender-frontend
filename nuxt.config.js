@@ -1,4 +1,7 @@
-export default {
+const e = require('./env.js')
+const env = Object.assign({}, e.default, e[process.env.NODE_ENV])
+
+const config = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'TenderBender-frontend',
@@ -16,6 +19,12 @@ export default {
       { rel: 'stylesheet', href: 'https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' }
     ]
   },
+
+  server: {
+    port: env.port
+  },
+
+  env: env,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -39,3 +48,5 @@ export default {
   build: {
   }
 }
+
+export default config

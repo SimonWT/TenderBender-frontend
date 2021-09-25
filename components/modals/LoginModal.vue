@@ -23,7 +23,6 @@
       <template #footer>
         <div class="footer-dialog">
           <vs-button block> Sign In </vs-button>
-
           <div class="new">New Here? <a href="#">Create New Account</a></div>
         </div>
       </template>
