@@ -1,11 +1,6 @@
 <template>
   <div class="center examplex">
-    <vs-navbar
-      center-collapsed
-      text-white 
-      color="primary"
-      v-model="active"
-    >
+    <vs-navbar center-collapsed text-white color="primary" v-model="active">
       <template #left>
         <img src="/logo2.png" alt="" />
       </template>
@@ -22,7 +17,9 @@
         license
       </vs-navbar-item>
       <template #right>
-        <vs-button border @click="$emit('open-login')">Login</vs-button>
+        <vs-button color="rgb(59,222,200)" gradient @click="$emit('open-login')"
+          >Login</vs-button
+        >
         <vs-button>Get Started</vs-button>
       </template>
     </vs-navbar>
