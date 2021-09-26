@@ -1,6 +1,11 @@
 <template>
   <div class="profile-trends-page">
-    <nuxt-link to="/profile"> <- Back to Profile</nuxt-link>
+    <nuxt-link to="/profile" class="no-underline">
+      <vs-button>
+        <i class="bx bx-arrow-back"></i>
+        Back to Profile</vs-button
+      >
+    </nuxt-link>
     <div class="profile-trends">
       <div>
         <client-only>

@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <Header class="header" @open-login="openLogin"/>
-    <Sidebar class="sidebar" />
+    <!-- <Sidebar class="sidebar" /> -->
     <div class="content">
         <Nuxt />
     </div>
@@ -51,7 +51,11 @@ export default {
     display: grid;
     grid-template-areas:
         "header header"
-        "sidebar content";
+        "content content";
     height: 100vh;
+}
+.content{
+    max-width: 980px;
+    margin: 0 auto;
 }
 </style>

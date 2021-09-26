@@ -5,7 +5,7 @@
         <img src="/avatars/avatar-4.png" alt="" />
       </vs-avatar>
       <h1 class="o-name">ООО "НЕВЪЕБЕННЫЙ САЙТ"</h1>
-      <nuxt-link to="/profile/trends" style="margin-left: auto; text-decoration: none;">
+      <nuxt-link to="/profile/trends" style="margin-left: auto;" class="no-underline">
         <vs-button size="xl" gradient
           >Графики</vs-button
       >
@@ -16,13 +16,13 @@
       <div>
         <h2># Прошлые заказы</h2>
         <div class="orders">
-          <OrderCard class="order" v-for="i in 10" :key="i" />
+          <OrderCard class="order" v-for="i in 10" :key="i" :orderNumber="i" />
         </div>
       </div>
       <div>
         <h2># Будущие заказы</h2>
         <div class="orders">
-          <OrderCard class="order" v-for="i in 10" :key="i" />
+          <OrderCard class="order" v-for="i in 10" :key="i" :orderNumber="i" />
         </div>
       </div>
     </div>

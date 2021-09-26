@@ -1,7 +1,7 @@
 <template>
   <vs-card class="order-card">
     <template #title>
-      <h3>Заказ №N</h3>
+      <h3>Заказ №{{orderNumber}}</h3>
     </template>
     <template #img>
       <img src="/foto2.jpeg" alt="" />
@@ -22,7 +22,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    orderNumber: {},
+  },
+}
 </script>
 
 <style lang="scss" scoped>
