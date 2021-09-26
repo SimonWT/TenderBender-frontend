@@ -4,7 +4,7 @@ const env = Object.assign({}, e.default, e[process.env.NODE_ENV])
 const config = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'TenderBender-frontend',
+    title: 'Tender Bender',
     htmlAttrs: {
       lang: 'en'
     },

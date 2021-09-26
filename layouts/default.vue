@@ -25,7 +25,12 @@ export default {
       openRegistration() {
           this.$refs.registrationModal.open()
       }
-  }
+  },
+  created () {
+  this.$nuxt.$on('open-login', () => {
+    this.openLogin()
+  })
+}
 }
 </script>
 
@@ -38,7 +43,7 @@ export default {
 }
 .content {
     grid-area: content;
-    padding-top: 40px;
+    padding: 40px 40px 40px 0;
 }
 .app {
     grid-template-columns: 1fr 6fr;
