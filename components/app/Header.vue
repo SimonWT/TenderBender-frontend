@@ -4,17 +4,15 @@
       <template #left>
         <img src="/logo2.png" alt="" />
       </template>
-      <vs-navbar-item :active="active == 'guide'" id="guide">
-        Guide
+      <vs-navbar-item  @click="$router.push('/')" :active="active == 'guide'" id="guide">
+        <!-- <nuxt-link to="/" class="no-underline" style="color: white;"> -->
+          Guide
+        <!-- </nuxt-link> -->
       </vs-navbar-item>
-      <vs-navbar-item :active="active == 'docs'" id="docs">
-        Documents
-      </vs-navbar-item>
-      <vs-navbar-item :active="active == 'components'" id="components">
-        Components
-      </vs-navbar-item>
-      <vs-navbar-item :active="active == 'license'" id="license">
-        license
+      <vs-navbar-item @click="$router.push('/profile')" :active="active == 'profile'" id="profile">
+        <!-- <nuxt-link to="/profile" class="no-underline" style="color: white;"> -->
+          Profile
+        <!-- </nuxt-link> -->
       </vs-navbar-item>
       <template #right>
         <vs-button color="rgb(59,222,200)" gradient @click="$emit('open-login')"
@@ -29,7 +27,7 @@
 <script>
 export default {
   data: () => ({
-    active: 'guide',
+    active: 'profile',
   }),
 }
 </script>

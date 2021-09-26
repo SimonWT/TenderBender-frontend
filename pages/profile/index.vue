@@ -4,7 +4,7 @@
       <vs-avatar size="100" badge badge-color="success">
         <img src="/avatars/avatar-4.png" alt="" />
       </vs-avatar>
-      <h1 class="o-name">ООО "НЕВЪЕБЕННЫЙ САЙТ"</h1>
+      <h1 class="o-name">ООО "АОМ"</h1>
       <nuxt-link to="/profile/trends" style="margin-left: auto;" class="no-underline">
         <vs-button size="xl" gradient
           >Графики</vs-button
